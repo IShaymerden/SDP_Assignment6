@@ -1,0 +1,71 @@
+@startuml
+title Assignment 6 - Visitor Pattern
+skinparam classAttributeIconSize 0
+interface Element {
+  +getName(): String
+  +getChildren(): List<Element>
+  +accept(visitor: Visitor): void
+}
+abstract class AbstractNode {
+  -name: String
+  -parent: DirectoryNode
+  +getName(): String
+  +getParent(): DirectoryNode
+  ~setParent(parent: DirectoryNode): void
+  +getChildren(): List<Element>
+}
+class FileNode {
+  -size: long
+  +getSize(): long
+  +accept(visitor: Visitor): void
+}
+class DirectoryNode {
+  -children: Map<String, AbstractNode>
+  +addChild(child: AbstractNode): DirectoryNode
+  +removeChild(name: String): boolean
+  +getChildren(): List<Element>
+  +accept(visitor: Visitor): void
+}
+interface Visitor {
+  +visit(file: FileNode): void
+  +visit(directory: DirectoryNode): void
+  +reset(): void
+  +beforeVisit(path: String, depth: int): void
+}
+class TotalSizeVisitor {
+  -totalSize: long
+  +getTotalSize(): long
+}
+class SearchVisitor {
+  -filenameCriterion: Predicate<String>
+  -minimumSize: long
+  -matches: List<String>
+  +getMatches(): List<String>
+}
+class StatisticsVisitor {
+  -fileCount: long
+  -directoryCount: long
+  -maximumDepth: int
+  +getFileCount(): long
+  +getDirectoryCount(): long
+  +getMaximumDepth(): int
+}
+class TreeWalker {
+  +walk(root: Element, visitor: Visitor): void
+}
+Element <|.. AbstractNode
+AbstractNode <|-- FileNode
+AbstractNode <|-- DirectoryNode
+DirectoryNode "0..1" *-- "0..*" AbstractNode : owns children
+Visitor <|.. TotalSizeVisitor
+Visitor <|.. SearchVisitor
+Visitor <|.. StatisticsVisitor
+TreeWalker ..> Element : accepts and reads children
+TreeWalker ..> Visitor : reset / context
+FileNode ..> Visitor : visit(this)
+DirectoryNode ..> Visitor : visit(this)
+note bottom of TreeWalker
+  Sole traversal owner: iterative DFS.
+  Root depth = 0; root-relative paths.
+end note
+@enduml

@@ -1,0 +1,17 @@
+[INFO] Compiling 11 source files with javac [debug release 17] to target\classes
+[INFO] Compiling 7 source files with javac [debug release 17] to target\test-classes
+[INFO] Running edu.sdp.filesystem.SearchVisitorTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s -- in edu.sdp.filesystem.SearchVisitorTest
+[INFO] Running edu.sdp.filesystem.StatisticsVisitorTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in edu.sdp.filesystem.StatisticsVisitorTest
+[INFO] Running edu.sdp.filesystem.TotalSizeVisitorTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in edu.sdp.filesystem.TotalSizeVisitorTest
+[INFO] Running edu.sdp.filesystem.TraversalLifecycleTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in edu.sdp.filesystem.TraversalLifecycleTest
+[INFO] Running edu.sdp.filesystem.TreeIntegrityTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in edu.sdp.filesystem.TreeIntegrityTest
+[INFO] Running edu.sdp.filesystem.VisitorDispatchTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in edu.sdp.filesystem.VisitorDispatchTest
+[INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+[INFO] Finished at: 2026-11-08T22:10:20+05:00

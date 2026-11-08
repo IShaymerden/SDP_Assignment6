@@ -1,0 +1,10 @@
+Visitor Pattern - Advanced File System
+Root: coursework
+Total size: 7496 bytes
+Search: suffix=.txt, minimum size=600 bytes
+  README.txt
+  documents/notes.txt
+Files: 7
+Directories (including root): 5
+Maximum depth (root = 0): 3
+Repeated size calculation: 7496 bytes
